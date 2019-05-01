@@ -8,8 +8,13 @@
 #define outputB 8
 #define index A1
 
+double wheelRadius = 0.13335; //wheel radius in meters
+
 int state = 0;
-long int period = 0;
+long int period;
+double timeRotation; //time for one revolution in seconds
+double rotPerSec;
+double roverSpeed; //speed of rover in mph
 
 //Time in microseconds
 int time1 = 0;
@@ -64,7 +69,10 @@ void loop() {
   //If half period is reached
   if (state == 2){
     period = 2 * (time2 - time1);
-    Serial.println(period);
+    timeRotation = 500 * period;
+    rotPerSec = 1000000 / timeRotation;
+    roverSpeed = 2 * M_PI * wheelRadius * rotPerSec * 2.23694;
+    Serial.println(roverSpeed); //speed of motor in mph
     state = 0;
   }
 
