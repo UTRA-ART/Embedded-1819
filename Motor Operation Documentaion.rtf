@@ -1,0 +1,28 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww21440\viewh15840\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Running the motor: \
+\
+1. Firstly, ensure that all connections are secure! Make sure that nothing is falling apart or will disconnect\'97this is crucial as if anything disconnects it could fry a component\
+\
+2. Close the switch\'97you\'92ll know it\'92s on if the digital ammeter lights up\
+\
+3. Connect PWM pins 5 and 6 from the Arduino to AN2 and AN1 respectively and the connect the Arduino GND to the Motor Controller GND\
+\
+4. Find the remote control and turn the motor controller on\'97you\'92ll know it\'92s on if the controller\'92s fans turn on and the PWR LED is lit green\
+\
+5. Connect the computer with the appropriate ROS motor code to the Arduino\
+\
+6. Run the ROS motor code and watch the wheels turn\
+\
+Possible errors:\
+\
+- The Arduino isn\'92t loaded with the right code: Just reload the Arduino with the right Arduino-ROS code (in the ART Embedded Repo) and check the connections again\
+- Power to the motor controller: It\'92s possible that the switch control on the side of the motor controller is not connected correctly. Just take a jumper wire and connect the the two ends of the switch and see if the motor controller turns on. If it does, run the tests you need to and make a note about the switch problem, but if it doesn\'92t, it\'92s likely that there is a problem with the motor controller (make a note of it)\
+- If it\'92s neither of the above, check connections again\
+- If that still fails, check the switch configure located near the DIG, AN pins on the back of the motor controller: Be sure that it\'92s in a setting of 10110000 (if this setting doesn\'92t work then try 10000000)\
+- If all of the above fails, message me, Jason, and I will do my best to help figure out the problem}
